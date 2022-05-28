@@ -1,0 +1,109 @@
+.how-order {
+  position: relative;
+  &__inner {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 200px;
+  }
+  &__title {
+    margin-bottom: 40px;
+  }
+  &__columns {
+    position: relative;
+    display: flex;
+
+    max-width: 730px;
+    width: 100%;
+    margin-left: auto;
+    padding-right: 105px;
+    border-right: 1px solid $moreColor;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: 0;
+
+      width: 80px;
+      height: 10px;
+
+      background-color: $moreColor;
+    }
+  }
+  &__column--1 {
+    padding-right: 90px;
+  }
+  &__item {
+    margin-bottom: 40px;
+    &-title {
+      margin-bottom: 10px;
+
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 120%;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+
+      color: $moreColor;
+    }
+  }
+  &__decor {
+    &--text {
+      position: absolute;
+      z-index: -1;
+      right: 0%;
+      bottom: -15%;
+    }
+    &--flowers {
+      position: absolute;
+      z-index: 0;
+      top: 10%;
+      left: -20px;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    &__columns {
+      max-width: calc(400px + (730 - 400) * (100vw - 320px) / (1440 - 320));
+      padding-right: calc(10px + (105 - 10) * (100vw - 320px) / (1440 - 320));
+    }
+    &__item-title {
+      font-size: calc(20px + (30 - 20) * (100vw - 320px) / (1440 - 320));
+    }
+    &__decor--flowers {
+      width: calc(249px + (562 - 249) * (100vw - 320px) / (1440 - 320));
+      left: calc(-220px + (-20 - -200) * (100vw - 320px) / (1440 - 320));
+    }
+  }
+  @media (max-width: 640px) {
+    &__columns {
+      margin-top: 15px;
+      padding-top: 15px;
+      max-width: 100%;
+      padding-right: 0;
+      border-right: 0;
+      margin-left: 0;
+      flex-direction: column;
+      &::after {
+        top: -15px;
+      }
+    }
+    &__column--1 {
+      padding-right: 0;
+    }
+    &__decor {
+      &--text {
+        bottom: -20%;
+      }
+      &--flowers {
+        display: none;
+      }
+    }
+  }
+}
+// &__columns {
+//       flex-direction: column;
+//     }
+//     &__column--1 {
+//       padding-right: 0;
+//     }

@@ -1,0 +1,126 @@
+.footer {
+  position: relative;
+  z-index: 2;
+  background-color: #000;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    padding: 30px 0;
+  }
+  &__logo {
+    margin-bottom: 10px;
+  }
+  &__subtitle {
+    margin-bottom: 10px;
+
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: $mainColor1;
+  }
+
+  &__info {
+    margin-right: 40px;
+    max-width: 220px;
+  }
+  &__list {
+    &-link {
+      display: block;
+      font-size: 14px;
+      padding: 2px 0;
+      width: 100%;
+      margin-bottom: 3px;
+
+      transition: all, 0.25s;
+      &:hover {
+        color: $moreColor;
+        text-decoration: underline;
+      }
+    }
+    &-link-subtitle {
+      display: block;
+      margin-bottom: 0;
+      width: 100%;
+
+      transition: all, 0.25s;
+      &:hover {
+        color: $moreColor;
+        text-decoration: underline;
+      }
+      &:not(:first-child) {
+        padding: 5px 0;
+      }
+    }
+    &-item-subtitle:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &--1 {
+      margin-right: 30px;
+    }
+    &--2 {
+      margin-right: 45px;
+    }
+    &--3 {
+      margin-right: 60px;
+      max-width: 160px;
+    }
+  }
+
+  &__contact {
+    max-width: 250px;
+    &-email,
+    &-address,
+    &-phone {
+      display: block;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: $mainColor1;
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+
+    &-text {
+      display: block;
+      margin-top: 10px;
+
+      font-size: 11px;
+      text-decoration: none;
+
+      color: $whiteColor;
+    }
+  }
+  @media (max-width: 605px) {
+    &__inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    &__list--1,
+    &__list--2 {
+      display: none;
+    }
+
+    &__list--3 {
+      max-width: 100%;
+      order: 1;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+    &__contact {
+      max-width: 100%;
+      order: 2;
+      margin-bottom: 40px;
+    }
+    &__info {
+      max-width: 100%;
+      margin-right: 0;
+      order: 3;
+    }
+  }
+}

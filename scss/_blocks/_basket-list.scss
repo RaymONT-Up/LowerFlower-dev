@@ -1,0 +1,94 @@
+.basket-list {
+  margin-bottom: auto;
+  border-top: 1px solid #555555;
+  &__item {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #555555;
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+  &__img {
+    margin-right: 20px;
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &--2 {
+      margin-left: auto;
+    }
+  }
+  &__name {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $whiteColor;
+    transition: all, 0.25s;
+    &:hover {
+      color: $moreColor;
+      text-decoration: underline;
+    }
+  }
+
+  &__input {
+    width: 100px;
+    padding: 5px 35px;
+    border: 1px solid #555555;
+
+    text-align: center;
+    color: $whiteColor;
+    background-color: transparent;
+    &:focus-visible {
+      outline: none;
+    }
+    &-label {
+      width: 100px;
+      position: relative;
+    }
+    &--minus {
+      padding: 10px;
+      position: absolute;
+      top: 50%;
+      left: 2px;
+      transform: translateY(-50%);
+
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 50%;
+      cursor: pointer;
+    }
+    &--add {
+      padding: 10px;
+      position: absolute;
+      top: 50%;
+      right: 2px;
+      transform: translateY(-50%);
+
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 50%;
+      cursor: pointer;
+    }
+  }
+  &__item-price {
+    font-size: 15px;
+    font-weight: 500;
+    color: $mainColor1;
+  }
+  &__btn-delete {
+    font-size: 11px;
+    font-weight: 400;
+    color: $whiteColor;
+    text-decoration: underline;
+    transition: all, 0.25s;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

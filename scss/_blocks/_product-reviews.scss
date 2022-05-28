@@ -1,0 +1,136 @@
+.product-reviews {
+  &__inner {
+    margin-bottom: 200px;
+  }
+  &__title {
+    margin-bottom: 40px;
+
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: $mainColor1;
+  }
+  &__list {
+    max-height: 600px;
+    height: 100%;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+  &__review {
+    max-width: 560px;
+    margin-bottom: 30px;
+    &-text {
+      margin-bottom: 10px;
+
+      font-size: 16px;
+      color: $whiteColor;
+    }
+    &-stars {
+      margin-bottom: 10px;
+    }
+    &-star {
+      font-size: 18px;
+      color: $whiteColor;
+
+      &--gold {
+        color: $moreGoldColor;
+      }
+    }
+    &-info {
+      color: $greyColor;
+    }
+  }
+
+  &__new-review {
+    margin-top: 60px;
+  }
+  &__stars-add {
+    margin: 5px 0 20px 0;
+  }
+
+  &__form {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    &-rating-wrapper {
+      margin-top: 5px;
+      margin-bottom: 20px;
+      position: relative;
+      font-size: 25px;
+      line-height: 100%;
+      display: inline-block;
+      &::before {
+        content: "★★★★★";
+        display: block;
+        color: $whiteColor;
+      }
+    }
+    &-rating-items {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      // overflow: hidden;
+    }
+    &-rating-item {
+      position: absolute;
+      width: 0%;
+      height: 0%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+    &-rating-label {
+      height: 100%;
+      cursor: pointer;
+      color: $whiteColor;
+      &::before {
+        content: "★";
+        display: block;
+        transition: color, 0.25s;
+      }
+    }
+    &-rating-label:hover,
+    &-rating-label:hover ~ &-rating-label,
+    &-rating-label:checked ~ &-rating-label:hover {
+      color: gold;
+    }
+    &-rating-item:checked,
+    &-rating-item:checked ~ &-rating-label {
+      color: $moreGoldColor;
+    }
+
+    &-label {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      &--1 {
+        margin-bottom: 0;
+      }
+    }
+    &-text {
+      height: 140px;
+    }
+    &-text,
+    &-input {
+      margin-top: 5px;
+    }
+
+    &-btn {
+      max-width: 270px;
+    }
+    &-privacy-policy {
+      margin-top: 10px;
+      max-width: 320px;
+      font-size: 10px;
+    }
+  }
+}

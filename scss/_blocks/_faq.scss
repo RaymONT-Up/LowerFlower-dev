@@ -1,0 +1,164 @@
+.faq {
+  position: relative;
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 200px;
+  }
+  &__title {
+    position: relative;
+    padding-left: 100px;
+    margin-bottom: 40px;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 70px;
+      height: 2px;
+      background-color: $mainColor1;
+    }
+  }
+
+  &__accordions {
+    max-width: 925px;
+  }
+  // Close accordion
+  &__accordion {
+    padding: 0 20px;
+
+    border: 1px solid $mainColor1;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+    &-button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      align-content: center;
+      flex-direction: row;
+      width: 100%;
+      padding: 20px 0;
+
+      text-align: left;
+    }
+    &-title {
+      margin-right: 30px;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 130%;
+      text-transform: uppercase;
+
+      color: $mainColor1;
+    }
+    &-icon {
+      position: relative;
+      display: inline-block;
+      min-width: 20px;
+      min-height: 3px;
+      background-color: $mainColor1;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 20px;
+        width: 3px;
+
+        background-color: $mainColor1;
+        transition: all, 0.25s;
+      }
+    }
+
+    &-paragraph {
+      height: 0;
+      overflow-y: hidden;
+      opacity: 0;
+
+      transition: all, 0.25s;
+    }
+  }
+
+  // Open accordion
+  &__accordion--open {
+    .faq__accordion-icon::after {
+      opacity: 0;
+    }
+
+    .faq__accordion-paragraph {
+      margin-bottom: 30px;
+      opacity: 1;
+    }
+  }
+
+  // Decors
+  &__decor {
+    &--flower {
+      position: absolute;
+      top: -175px;
+      right: -430px;
+      z-index: 1;
+    }
+    &--gradient {
+      position: absolute;
+      z-index: 0;
+      width: 400px;
+      height: 150px;
+
+      border-radius: 400px 50px 400px 50px / 150px 25px 150px 25px;
+
+      filter: blur(130px) opacity(0.9);
+      transform: rotate(32.83deg);
+      background-color: $moreBlueColor;
+      &--1 {
+        top: -100px;
+        left: -200px;
+      }
+      &--2 {
+        bottom: -100px;
+        left: -200px;
+      }
+      &--3 {
+        bottom: -150px;
+        right: -100px;
+      }
+      &--4 {
+        top: -175px;
+        right: -375px;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__accordion {
+      &-title {
+        font-size: 18px;
+      }
+    }
+    &__decor--flower {
+      width: 275px;
+      top: -60px;
+      right: -160px;
+    }
+  }
+  @media (max-width: 430px) {
+    &__title {
+      padding-left: 45px;
+      &::after {
+        width: 35px;
+        height: 1px;
+      }
+    }
+    &__accordion {
+      padding: 0 12px;
+      &-title {
+        font-size: 16px;
+        padding: 12px 0;
+      }
+    }
+  }
+}

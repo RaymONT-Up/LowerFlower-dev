@@ -1,0 +1,201 @@
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+
+  font-family: "Oswald", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 120%;
+  letter-spacing: 0.04em;
+
+  color: $whiteColor;
+  background-color: $darkColor;
+}
+hr {
+  margin: 0;
+  height: 1px;
+  opacity: 0.9;
+  background-color: $whiteColor;
+}
+// Scroll and overlay
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: $mainColor1;
+}
+@media (max-width: 720px) {
+  *::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+}
+body.body--not-scrolling {
+  overflow-y: hidden;
+}
+
+//
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.main {
+  flex: 1 0 auto;
+}
+.footer {
+  flex: 0 0 auto;
+}
+.container {
+  position: relative;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+p {
+  line-height: 110%;
+}
+//
+*:focus-visible {
+  outline: 1px solid $whiteColor;
+}
+textarea {
+  resize: none;
+}
+input,
+textarea,
+select,
+option {
+  padding: 20px;
+  border: 1px solid $greyColor;
+
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+
+  color: $whiteColor;
+  background-color: transparent;
+
+  transition: all, 0.25s;
+  &:focus-visible {
+    border-color: $mainColor1;
+    outline: none;
+  }
+}
+// global class
+
+.title {
+  font-family: "Cormorant", serif;
+  font-weight: 400;
+  font-size: 100px;
+  letter-spacing: 0.05em;
+  line-height: 105%;
+  text-transform: uppercase;
+}
+.paragraph {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 130%;
+
+  color: $whiteColor;
+}
+.btn--1 {
+  display: inline-block;
+  padding: 14px 46px;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+
+  transition: all, 0.25s;
+
+  color: $darkColor;
+  background-color: $mainColor1;
+
+  &:hover {
+    color: $whiteColor;
+    background-color: $mainColor2;
+    box-shadow: 0 0 15px 0 $mainColor1;
+  }
+}
+.btn--2 {
+  display: inline-block;
+  border: 0.6px solid $whiteColor;
+  padding: 18px 93px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: $whiteColor;
+  background-color: transparent;
+
+  transition: all, 0.25s;
+  &:hover {
+    border-color: transparent;
+    color: $darkColor;
+    background-color: $mainColor1;
+  }
+}
+.defolt-link {
+  color: $moreColor;
+  text-decoration: underline;
+  transition: all, 0.25s;
+  &:hover {
+    text-decoration: none;
+  }
+}
+@media (max-width: 1440px) {
+  .title {
+    font-size: calc(40px + (100 - 40) * (100vw - 320px) / (1440 - 320));
+  }
+  .paragraph {
+    font-size: calc(14px + (20 - 14) * (100vw - 320px) / (1440 - 320));
+  }
+  body {
+    font-size: calc(12px + (15 - 12) * (100vw - 320px) / (1440 - 320));
+  }
+}
+@media (max-width: 600px) {
+  .btn--1,
+  .btn--2 {
+    font-size: 12px;
+  }
+}
+// Crumbs links
+.crumbs-links {
+  position: relative;
+  z-index: 2;
+  margin-top: 35px;
+  margin-bottom: 45px;
+  text-align: left;
+
+  font-size: 12px;
+  line-height: 18px;
+
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: $whiteColor;
+
+  &__link {
+    transition: all, 0.25s;
+    &:hover {
+      text-decoration: underline;
+    }
+    &::after {
+      content: " / ";
+    }
+  }
+}

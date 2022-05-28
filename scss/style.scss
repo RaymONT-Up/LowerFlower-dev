@@ -1,0 +1,52 @@
+@import "variables";
+@import "reset";
+@import "global";
+
+// Index / Main
+@import "_blocks/_header";
+@import "_blocks/_intro";
+@import "_blocks/_intro-catalog";
+@import "_blocks/_popular-bouquets";
+@import "_blocks/_how-order";
+@import "_blocks/_occasion-buy";
+@import "_blocks/_questions-contact";
+@import "_blocks/_social";
+@import "_blocks/_footer";
+
+// Catalog
+// Header + basket-list
+@import "_blocks/_catalog.scss";
+@import "_blocks/_product-card.scss";
+// Footer
+
+// FAQ
+// Header + basket-list
+@import "_blocks/_faq";
+// Footer
+
+// About Us
+// Header + basket-list
+@import "_blocks/_about-us.scss";
+// Footer
+
+// Shipping Payment
+// Header + basket-list
+@import "_blocks/_shipping-payment.scss";
+// Footer
+
+// Contact
+// Header + basket-list
+@import "_blocks/_contact.scss";
+// Footer
+
+// ordering
+// Header + basket-list
+@import "_blocks/_ordering.scss";
+@import "_blocks/_basket-list.scss";
+// Footer
+
+// Product
+// Header + basket-list
+@import "_blocks/_product.scss";
+@import "_blocks/_product-reviews.scss";
+// Footer

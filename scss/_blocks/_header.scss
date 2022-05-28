@@ -1,0 +1,340 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: rgba($color: $darkColor, $alpha: 0.95);
+  z-index: 5;
+
+  &__inner {
+    max-width: 1140px;
+    width: 100%;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  &__logo {
+    margin-right: 70px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 50px;
+    &--logo,
+    &--email,
+    &--address,
+    &--phone,
+    &--social {
+      display: none;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    font-weight: 400;
+
+    color: $whiteColor;
+
+    transition: color, 0.25s;
+    &:hover {
+      color: $mainColor1;
+      text-decoration: underline;
+    }
+
+    &--big {
+      display: none;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: $mainColor1;
+    }
+  }
+
+  &__search-btn {
+    svg {
+      margin-right: 10px;
+      fill: $whiteColor;
+
+      transition: color, 0.25s;
+    }
+
+    font-size: 14px;
+    font-weight: 400;
+
+    color: $whiteColor;
+
+    transition: color, 0.25s;
+
+    &:hover {
+      svg {
+        fill: $mainColor1;
+      }
+
+      color: $mainColor1;
+    }
+  }
+
+  &__phone {
+    display: block;
+    margin-left: auto;
+
+    text-decoration: underline;
+
+    color: $mainColor1;
+    transition: all, 0.25s;
+    img {
+      margin-right: 10px;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &--2 {
+      margin-left: 0;
+      display: none;
+    }
+  }
+
+  &__basket {
+    &-btn {
+      position: relative;
+      z-index: 3;
+      margin: 0 17px;
+      padding: 10px;
+      border-radius: 10px;
+
+      background-color: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(20px);
+
+      transition: all, 0.25s;
+
+      svg {
+        fill: $whiteColor;
+        transition: all, 0.25s;
+      }
+    }
+
+    &-container {
+      position: fixed;
+      z-index: 3;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateX(100%);
+      overflow-y: auto;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-wrap: nowrap;
+
+      height: 100vh;
+      width: 100%;
+      max-width: 420px;
+      min-width: 320px;
+      padding: 20px 30px;
+
+      background-color: $darkColor;
+      transition: all, 0.3s;
+      &.header__basket-container--active {
+        transform: translateX(0);
+      }
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 17px;
+      border-bottom: 1px solid #555555;
+    }
+    &-title {
+      margin-right: auto;
+      font-size: 30px;
+      font-weight: 700;
+      color: $mainColor1;
+    }
+
+    &-paragraph {
+      margin-bottom: 20px;
+      &--price {
+        font-weight: 500;
+        color: $mainColor1;
+      }
+    }
+
+    &-btn-issue {
+      display: block;
+      padding: 20px;
+      width: 100%;
+      border: 1px solid #555555;
+
+      text-align: center;
+      font-weight: 500;
+      font-size: 14px;
+
+      color: $whiteColor;
+    }
+  }
+
+  &__burger {
+    position: relative;
+    z-index: 3;
+    display: none;
+    width: 30px;
+    height: 15px;
+    box-sizing: content-box;
+    &-line {
+      position: absolute;
+      transform: translateY(-50%);
+      display: block;
+      width: 30px;
+      height: 1.5px;
+      border-radius: 16px;
+      background-color: $mainColor1;
+
+      transition: all, 0.3s;
+    }
+    &-line--1 {
+      top: 0;
+    }
+    &-line--2,
+    &-line--3 {
+      top: 50%;
+    }
+    &-line--4 {
+      bottom: 0;
+    }
+    &.header__burger--active {
+      .header__burger-line--1,
+      .header__burger-line--4 {
+        opacity: 0;
+      }
+      .header__burger-line--2 {
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .header__burger-line--3 {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    }
+  }
+
+  // Media
+  @media (max-width: 1070px) {
+    &__logo {
+      margin-right: 45px;
+    }
+    &__item {
+      margin-right: 35px;
+    }
+  }
+
+  @media (max-width: 940px) {
+    &__logo {
+      display: none;
+    }
+    &__search-btn {
+      margin-left: auto;
+    }
+    &__phone {
+      margin-left: 40px;
+    }
+    &__basket-btn {
+      margin: 0;
+      margin-left: 17px;
+    }
+
+    // Burger menu
+    &__burger {
+      position: relative;
+      z-index: 3;
+      display: block;
+    }
+    &__nav {
+      overflow-y: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 30vw;
+      height: 100vh;
+      min-width: 300px;
+      padding: 20px;
+      transform: translateX(-100%);
+      background-color: $darkColor;
+      transition: all, 0.3s;
+      &.header__nav--active {
+        transform: translate(0);
+      }
+    }
+
+    &__list {
+      padding-top: calc(5vh + 40px);
+      text-align: center;
+      flex-direction: column;
+    }
+    &__item {
+      margin-right: 0;
+      margin-bottom: 20px;
+      &--logo,
+      &--email,
+      &--address,
+      &--phone,
+      &--social {
+        display: block;
+      }
+
+      &--logo {
+        margin-bottom: 30px;
+      }
+      &--email {
+        margin-top: 30px;
+        hr {
+          margin-bottom: 15px;
+        }
+      }
+      &--logo,
+      &--email,
+      &--address,
+      &--phone {
+        margin-bottom: 10px;
+      }
+      &--social {
+        margin-top: 20px;
+      }
+    }
+    &__link {
+      display: block;
+      width: 100%;
+      &--big {
+        width: 100%;
+        display: block;
+        margin-bottom: 5px;
+      }
+      &--social {
+        width: 100%;
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+      }
+    }
+    &__phone {
+      display: none;
+      margin-left: 0;
+      &--2 {
+        display: block;
+      }
+    }
+  }
+  @media (max-width: 450px) {
+    &__nav {
+      width: 100%;
+    }
+  }
+}

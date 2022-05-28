@@ -1,0 +1,139 @@
+.questions-contact {
+  position: relative;
+
+  background-color: #0f2222;
+  &__inner {
+    position: relative;
+    padding: 25px 0 55px 0;
+    margin-bottom: 50px;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      border-radius: 100%;
+      filter: blur(115px) opacity(0.95);
+      transform: rotate(32.83deg);
+    }
+    &::after {
+      left: -75px;
+      top: 30px;
+      width: 300px;
+      height: 300px;
+      background-color: $mainColor2;
+    }
+    &::before {
+      left: 215px;
+      top: 215px;
+      width: 350px;
+      height: 300px;
+      background-color: $mainColor1;
+    }
+  }
+
+  &__row {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+  }
+  &__title {
+    &--2 {
+      display: block;
+      margin-left: 110px;
+    }
+  }
+  &__desc {
+    max-width: 255px;
+    margin-left: auto;
+    padding-top: 50px;
+    margin-bottom: 20px;
+    border-top: 1px solid $mainColor1;
+  }
+
+  &__form {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    max-width: 445px;
+    width: 100%;
+    margin-left: auto;
+    &-input {
+      margin-bottom: 10px;
+      padding: 20px;
+      border: 1px solid $mainColor1;
+
+      color: $whiteColor;
+      background-color: transparent;
+
+      transition: all, 0.25s;
+    }
+    &-message {
+      width: 100%;
+      min-height: 120px;
+      resize: none;
+      padding: 20px;
+      border: 1px solid $mainColor1;
+
+      color: $whiteColor;
+      background-color: transparent;
+      margin-bottom: 20px;
+
+      transition: all, 0.25s;
+    }
+    &-btn {
+      max-width: 255px;
+      margin-bottom: 10px;
+    }
+    &-text {
+      max-width: 330px;
+      font-size: 10px;
+      a {
+        color: $moreColor;
+        text-decoration: underline;
+        transition: all, 0.25s;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__decor {
+    &-herb {
+      position: absolute;
+      z-index: 1;
+      top: -6%;
+      left: -25%;
+      pointer-events: none;
+    }
+    &-text {
+      position: absolute;
+      top: 250px;
+
+      left: 320px;
+      z-index: 1;
+    }
+  }
+
+  @media (max-width: 800px) {
+    &__row {
+      flex-direction: column;
+    }
+    &__desc {
+      padding-top: 15px;
+      margin-top: 20px;
+      max-width: 300px;
+    }
+  }
+  @media (max-width: 390px) {
+    &__title--2 {
+      margin-left: 40px;
+    }
+  }
+}
